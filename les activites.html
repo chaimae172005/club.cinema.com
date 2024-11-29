@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Activités et Ateliers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 225px;
+      height: 100vh;
+      background-color: #333333;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-family: 'Playfair Display', serif;
+      color: beige;
+      margin-bottom: 40px;
+    }
+
+    .sidebar a {
+      color: beige;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 15px;
+      transition: color 0.3s, padding-left 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: white;
+      padding-left: 10px;
+    }
+
+    /* Main Content */
+    .content {
+      width: calc(100% - 250px);
+      margin-left: 250px;
+      padding: 40px;
+      background-color: #000000;
+      color: white;
+    }
+
+    .content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: beige;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #222222;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: beige;
+    }
+
+    .individual {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #444444;
+      border-radius: 8px;
+      transition: box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .individual img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .individual input {
+      display: none;
+    }
+
+    .individual input:checked + img + div p {
+      opacity: 1;
+      max-height: 100px;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
+    
+    .individual p {
+      color: #ccc;
+      margin: 5px 0 0;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
+
+    .individual input:checked + img + div p {
+      opacity: 1;
+      max-height: none;
+    }
+
+    /* Gallery Styles */
+    .gallery-toggle {
+      display: none;
+    }
+
+    .gallery-label {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-top: 10px;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .gallery-label:hover {
+      background-color: #555;
+    }
+
+    .gallery-toggle:checked ~ .gallery {
+      display: flex;
+    }
+
+    .gallery {
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 270px;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Les Activités</h2>
+    <a href="#activites-section">Activités</a>
+    <a href="#ateliers-section">Ateliers</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Les Activités et Ateliers</h1>
+
+    <!-- Activités Section -->
+    <div class="section" id="activites-section">
+      <h2>Activités</h2>
+      <p style="font-size: 1rem; color: #ccc; margin-bottom: 15px; text-align: center;">
+        Click on the images below to see the description.
+      </p>
+      <div class="individual">
+        <input type="checkbox" id="theatre-toggle">
+        <img src="https://i.pinimg.com/736x/9f/be/88/9fbe88b1d293a705ed6a978806e17fa2.jpg" alt="Théâtre" onclick="document.getElementById('theatre-toggle').checked = !document.getElementById('theatre-toggle').checked;">
+        <div>
+          <h3>Théâtre</h3>
+          <p><span style="color:beige;">Le club organise des ateliers et des performances théâtrales, mettant en lumière la créativité des étudiants et leur capacité à explorer de nouvelles formes d'expression scénique. .</span> Découvrez les pratiques théâtrales et les mises en scène créatives.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="danse-toggle">
+        <img src="https://i.pinimg.com/736x/16/25/07/16250791e9fe47635327c0de1e0c8c2e.jpg" alt="Danse" onclick="document.getElementById('danse-toggle').checked = !document.getElementById('danse-toggle').checked;">
+        <div>
+          <h3>Danse</h3>
+          <p><span style="color:beige;">Des activités de danse sont organisés pour permettre aux étudiants de s'exprimer à travers divers styles de danse tout en découvrant les cultures du monde entier..</span> Participez à des cours de danse contemporaine et traditionnelle.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="cinema-toggle">
+        <img src="https://i.pinimg.com/736x/1e/7a/73/1e7a73ea843900f8b8587951d6eb584a.jpg" alt="Cinéma" onclick="document.getElementById('cinema-toggle').checked = !document.getElementById('cinema-toggle').checked;">
+        <div>
+          <h3>Cinéma</h3>
+          <p><span style="color:beige;">
+            Cinéma
+            Le club organise des projections de films avec des invités prestigieux, ainsi que des ateliers sur la réalisation et la critique cinématographique..</span> Découvrez les techniques de réalisation et d'analyse critique.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="ecriture-toggle">
+        <img src="https://cal.pickeringlibrary.ca/sites/default/files/styles/large/public/2024-02/istockphoto-1159432108-170667a_0.jpg" alt="Écriture" onclick="document.getElementById('ecriture-toggle').checked = !document.getElementById('ecriture-toggle').checked;">
+        <div>
+          <h3>Écriture</h3>
+          <p><span style="color:beige;">Le club organise des expositions artistiques, donnant aux étudiants la possibilité de présenter leurs œuvres et de découvrir de nouveaux talents..</span> Explorez les techniques d'écriture pour le théâtre, le cinéma, et la littérature.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="musique-toggle">
+        <img src="https://i.pinimg.com/736x/4d/69/f8/4d69f86f0ec380704405d232cb1d95e5.jpg" alt="Musique" onclick="document.getElementById('musique-toggle').checked = !document.getElementById('musique-toggle').checked;">
+        <div>
+          <h3>Musique</h3>
+          <p><span style="color:beige;">Des concerts et des performances musicales sont organisés régulièrement, avec des collaborations entre les étudiants et des artistes locaux et internationaux..</span> Apprenez à créer et jouer de la musique dans divers genres.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="evenements-toggle">
+        <img src="C:\Users\Nadia\Downloads\WhatsApp Image 2024-11-24 at 12.18.31 AM.jpeg" alt="Événements Festifs" onclick="document.getElementById('evenements-toggle').checked = !document.getElementById('evenements-toggle').checked;">
+        <div>
+          <h3>Événements Festifs</h3>
+          <p><span style="color:beige;">Organisation et animation de festivités musicales et culturelles.</span> Participez à des événements et des festivals vivants.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ateliers Section -->
+    <div class="section" id="ateliers-section">
+      <h2>Ateliers</h2>
+      <p style="font-size: 1rem; color: #ccc; margin-bottom: 15px; text-align: center;">
+        Cliquez pour découvrir nos ateliers.
+      </p>
+      <div class="individual">
+        <input type="checkbox" id="photo-toggle">
+        <img src="https://i.pinimg.com/736x/b4/f4/ef/b4f4efbdc0d01bb3cfe652cd9584e5d2.jpg" alt="Atelier Photographie" onclick="document.getElementById('photo-toggle').checked = !document.getElementById('photo-toggle').checked;">
+        <div>
+          <h3>Atelier Photographie</h3>
+          <p><span style="color:beige;">Un atelier de photographie qui permet aux étudiants de découvrir les bases techniques et artistiques de la photographie, d’explorer différents styles.</span> Devenez créateur d'images avec un matériel adapté.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="realisation-toggle">
+        <img src="C:\Users\Nadia\Downloads\WhatsApp Image 2024-11-29 at 1.44.17 AM.jpeg" alt="Atelier de Réalisation" onclick="document.getElementById('realisation-toggle').checked = !document.getElementById('realisation-toggle').checked;">
+        <div>
+          <h3>Atelier de Réalisation</h3>
+          <p><span style="color:beige;">Un atelier de réalisation qui offre un espace créatif où les étudiants peuvent explorer diverses formes d'art, comme la peinture.</span> Atelier pratique sur la direction artistique et la réalisation.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="montage-toggle">
+        <img src="https://static-cse.canva.com/blob/1145314/Montagevideo.jpg" alt="Atelier de Montage" onclick="document.getElementById('montage-toggle').checked = !document.getElementById('montage-toggle').checked;">
+        <div>
+          <h3>Atelier de Montage</h3>
+          <p><span style="color:beige;">Un atelier de montage permet aux étudiants d'apprendre les techniques d'édition vidéo, en utilisant des logiciels professionnels pour assembler, couper et finaliser des projets audiovisuels, tout en développant leur créativité et leurs compétences techniques..</span> Découvrez les logiciels et techniques pour monter des productions professionnelles.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="creation-toggle">
+        <img src="https://i.pinimg.com/736x/cd/93/45/cd9345e9f71356976984308366aeae1f.jpg" alt="Création Visuelle" onclick="document.getElementById('creation-toggle').checked = !document.getElementById('creation-toggle').checked;">
+        <div>
+          <h3>Création Visuelle</h3>
+          <p><span style="color:beige;">Un atelier de création visuelle et digitale qui permet aux étudiants d'explorer les arts visuels à travers des outils numériques, tels que le graphisme, l'illustration, la photographie numérique, la vidéo ou le design interactif.</span> Découvrez l'art de la conception visuelle pour le cinéma et le digital.</p>
+        </div>
+      </div>
+      <div class="individual">
+        <input type="checkbox" id="production-toggle">
+        <img src="C:\Users\Nadia\Downloads\WhatsApp Image 2024-11-26 at 11.40.27 PM (1).jpeg" alt="Atelier de Production Musicale" onclick="document.getElementById('production-toggle').checked = !document.getElementById('production-toggle').checked;">
+        <div>
+          <h3>Atelier de Production Musicale</h3>
+          <p><span style="color:beige;">Un atelier de production musicale qui offre aux étudiants l'opportunité d'apprendre à créer, composer et enregistrer de la musique en utilisant des logiciels de production musicale.</span> Apprenez à créer des morceaux originaux et à gérer des sessions en studio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
